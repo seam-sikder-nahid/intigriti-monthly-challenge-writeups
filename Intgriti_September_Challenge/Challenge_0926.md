@@ -52,7 +52,7 @@ That jumbled text is usually a sign of **Base64 encoding** — a way of turning 
 
 I took the scrambled text from the `pic` parameter and ran it through a Base64 **decoder** (there are free ones online, or you can use a terminal command).
 
-Once decoded, it turned out to just be a normal filename, like `cat.png`. That confirmed my theory: **whatever I put in, gets Base64-decoded by the server before it's used.**
+Once decoded, it turned out to just be a normal filename `panda`. That confirmed my theory: **whatever I put in, gets Base64-decoded by the server before it's used.**
 
 This meant if I wanted to send a *trick message* to the server, I first had to write it normally, then **Base64-encode it myself**, and *then* place it into the `pic` parameter.
 
