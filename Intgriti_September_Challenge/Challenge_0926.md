@@ -48,7 +48,7 @@ That jumbled text is usually a sign of **Base64 encoding** — a way of turning 
 ![Browser address bar showing the pic parameter](image_file/2.jpg)
 ---
 
-## 🖼️ Step 2 — Decode the Secret Code (Base64)
+## Step 2 — Decode the Secret Code (Base64)
 
 I took the scrambled text from the `pic` parameter and ran it through a Base64 **decoder** (there are free ones online, or you can use a terminal command).
 
@@ -56,8 +56,9 @@ Once decoded, it turned out to just be a normal filename, like `cat.png`. That c
 
 This meant if I wanted to send a *trick message* to the server, I first had to write it normally, then **Base64-encode it myself**, and *then* place it into the `pic` parameter.
 
-**📸 [Insert screenshot here: decoding the original `pic` value using a Base64 decoder tool]**
+**2.1: Decoding the original `pic` value using a Base64 decoder tool**
 
+![Decoding the original `pic` value](image_file/3.jpg)
 ---
 
 ## 🖼️ Step 3 — Test for SQL Injection
