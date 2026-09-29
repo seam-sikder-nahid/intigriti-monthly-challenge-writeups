@@ -37,12 +37,15 @@ While clicking around, I looked closely at the **URL in the address bar** after 
 
 That jumbled text is usually a sign of **Base64 encoding** — a way of turning normal text into a scrambled-looking format (it's not encryption, just a different way of writing the same message).
 
-`[(https://challenge-0926.challenges.intigriti.io/challenge.php?pic=cGFuZGE=)]`
+`https://challenge-0926.challenges.intigriti.io/challenge.php?pic=cGFuZGE=`
 
-**📸 [Insert screenshot here: the challenge page with animal boxes]**
+**1.1: The challenge page with animal boxes**
 
-**📸 [Insert screenshot here: browser address bar showing the `pic=` parameter]**
+![The challenge page with animal boxes](image_file/1.jpg)
 
+**1.2: Browser address bar showing the `pic=` parameter**
+
+![Browser address bar showing the pic parameter](image_file/2.jpg)
 ---
 
 ## 🖼️ Step 2 — Decode the Secret Code (Base64)
