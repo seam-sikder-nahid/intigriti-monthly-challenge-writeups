@@ -125,7 +125,7 @@ After Base64-encoding this and sending it, the page revealed:
 
 This told me the backend was running **MySQL version 8.0.46**.
 
-**Encoded payload for `version()` and the response showing `8.0.46`**
+**4.1: Encoded payload for `version()` and the response showing `8.0.46`**
 
 ![Encoded payload for `version()`](image_file/7.jpg)
 
