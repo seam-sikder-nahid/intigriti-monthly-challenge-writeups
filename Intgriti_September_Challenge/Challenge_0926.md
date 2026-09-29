@@ -99,7 +99,7 @@ So, I Base64-encoded the same payload and placed the encoded value into the `pic
 
 ---
 
-## 🖼️ Step 4 — Ask the Database What It Is (Find the Version)
+## Step 4 — Ask the Database What It Is (Find the Version)
 
 Now that I knew the door was unlocked, I wanted to know **which type of database** I was dealing with — like checking what brand of lock is on the door.
 
@@ -107,6 +107,12 @@ Plain-text payload:
 
 ```sql
 1' UNION SELECT version()#
+```
+
+Base64 Decoded payload:
+
+```
+MScgVU5JT04gU0VMRUNUIHZlcnNpb24oKSM=
 ```
 
 **Why `UNION SELECT`?** `UNION SELECT` is like saying "also bring me the answer to THIS other question, and staple it to the same reply." It lets you pull out extra information from the database that wasn't meant to be shown.
@@ -119,7 +125,9 @@ After Base64-encoding this and sending it, the page revealed:
 
 This told me the backend was running **MySQL version 8.0.46**.
 
-**📸 [Insert screenshot here: encoded payload for `version()` and the response showing `8.0.46`]**
+**Encoded payload for `version()` and the response showing `8.0.46`**
+
+![Encoded payload for `version()`](image_file/7.jpg)
 
 ---
 
