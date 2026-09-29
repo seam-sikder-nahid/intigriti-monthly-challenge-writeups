@@ -61,23 +61,32 @@ This meant if I wanted to send a *trick message* to the server, I first had to w
 ![Decoding the original `pic` value](image_file/3.jpg)
 ---
 
-## 🖼️ Step 3 — Test for SQL Injection
+## Step 3 — Test for SQL Injection
 
 Now for the fun part. I wanted to see if the server was blindly trusting whatever I sent it, without checking if it was a "safe" filename or a sneaky database command.
 
-I wrote this trick message (in plain text first):
+First, I tried sending the SQL Injection payload directly as plain text:
 
 ```sql
 1' OR '1'='1'--
 ```
 
-**Why this works (kid-friendly version):** This is like asking the librarian "bring me the book with ID number 1, OR just bring me literally anything, since 1 always equals 1." Because that statement is always true, the database gets confused and shows more than it should.
+This is like asking the librarian "bring me the book with ID number 1, OR just bring me literally anything, since 1 always equals 1." Because that statement is always true, the database gets confused and shows more than it should.
 
-I then Base64-encoded that message and put the encoded result into the `pic` parameter, then sent the request.
 
-The response confirmed the server was executing my message as part of a real SQL query — not treating it as a harmless filename. **SQL Injection confirmed! 🎉**
+📸 [Insert screenshot here: Plain-text payload 1' OR '1'='1'-- being sent and showing that it does not work]
 
-**📸 [Insert screenshot here: Base64-encoding the payload `1' OR '1'='1'--`]**
+However, the plain-text payload did not work. The server did not interpret it as part of the SQL query.
+
+
+So, I Base64-encoded the same payload and placed the encoded value into the `pic` parameter, then sent the request again.
+
+
+📸 [Insert screenshot here: Plain-text payload 1' OR '1'='1'-- being sent and showing that it does not work]
+
+
+
+ The response confirmed the server was executing my message as part of a real SQL query — not treating it as a harmless filename. **SQL Injection confirmed!**
 
 **📸 [Insert screenshot here: sending the request in Burp Suite / browser and showing the response]**
 
