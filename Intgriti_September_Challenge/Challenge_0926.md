@@ -68,13 +68,16 @@ Now for the fun part. I wanted to see if the server was blindly trusting whateve
 First, I tried sending the SQL Injection payload directly as plain text:
 
 ```sql
-1' OR '1'='1'--
+1' OR '1'='1'--   
 ```
 
 This is like asking the librarian "bring me the book with ID number 1, OR just bring me literally anything, since 1 always equals 1." Because that statement is always true, the database gets confused and shows more than it should.
 
 
-📸 [Insert screenshot here: Plain-text payload 1' OR '1'='1'-- being sent and showing that it does not work]
+**3.1: Plain-text payload 1' OR '1'='1'--   being sent and showing that it does not work**
+
+![Plain-text payload 1' OR '1'='1'--   ](image_file/4.jpg)
+
 
 However, the plain-text payload did not work. The server did not interpret it as part of the SQL query.
 
@@ -82,13 +85,17 @@ However, the plain-text payload did not work. The server did not interpret it as
 So, I Base64-encoded the same payload and placed the encoded value into the `pic` parameter, then sent the request again.
 
 
-📸 [Insert screenshot here: Plain-text payload 1' OR '1'='1'-- being sent and showing that it does not work]
+**3.2: Base64-encoded value of ``1' OR '1'='1'--   ``**
 
+![Base64-encoded value of 1' OR '1'='1'--   ](image_file/5.jpg)
 
 
  The response confirmed the server was executing my message as part of a real SQL query — not treating it as a harmless filename. **SQL Injection confirmed!**
+ 
 
-**📸 [Insert screenshot here: sending the request in Burp Suite / browser and showing the response]**
+**3.3: Sending the request in browser and showing the response**
+
+![Base64-encoded value response](image_file/6.jpg)
 
 ---
 
