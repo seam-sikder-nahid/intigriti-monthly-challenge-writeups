@@ -194,7 +194,7 @@ Two tables existed: `animals` (probably just normal pictures) and `secret_vault`
 
 ---
 
-## 🖼️ Step 7 — Look Inside the `secret_vault` Drawer
+## Step 7 — Look Inside the `secret_vault` Drawer
 
 Before opening the drawer, I needed to know **what labels (columns)** were inside it.
 
