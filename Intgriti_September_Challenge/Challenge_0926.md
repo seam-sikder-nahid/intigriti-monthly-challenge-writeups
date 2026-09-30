@@ -224,7 +224,7 @@ So `secret_vault` had two columns: `id` and `note`.
 
 ---
 
-## Step 8 — Open the Drawer and Grab the Flag 🏁
+## Step 8 — Open the Drawer and Grab the Flag 
 
 Finally, the moment of truth. I asked the database to show me both columns together.
 
@@ -255,6 +255,7 @@ INTIGRITI{01a09f56-74a2-700b-a849-ffe6742327b2}
 ```
 
 **8.1: Encoded payload for the final extraction and the response showing the flag**
+
 ![Encoded payload for the final extraction](image_file/11.jpg)
 
 
