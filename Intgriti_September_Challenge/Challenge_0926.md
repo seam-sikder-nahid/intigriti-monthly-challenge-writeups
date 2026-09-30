@@ -188,7 +188,7 @@ animals,secret_vault
 
 Two tables existed: `animals` (probably just normal pictures) and `secret_vault` — which sounded very interesting.
 
-**Encoded payload for table enumeration and response showing `animals,secret_vault`**
+**6.1: Encoded payload for table enumeration and response showing `animals,secret_vault`**
 
 ![Encoded payload for table enumeration](image_file/9.jpg)
 
