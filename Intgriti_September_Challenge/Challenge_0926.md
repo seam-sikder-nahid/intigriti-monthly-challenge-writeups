@@ -138,7 +138,7 @@ Next, I wanted to know the **name** of the database — like finding out the nam
 Plain-text payload:
 
 ```sql
-1' UNION SELECT database()#
+1' UNION SELECT database()#   
 ```
 
 Base64 Decoded payload:
@@ -155,7 +155,8 @@ critter_gallery
 
 So the database was called `critter_gallery`.
 
-**Encoded payload for `database()` and response showing `critter_gallery`**
+**5.1: Encoded payload for `database()` and response showing `critter_gallery`**
+
 ![Encoded payload for `database()`](image_file/8.jpg)
 
 ---
