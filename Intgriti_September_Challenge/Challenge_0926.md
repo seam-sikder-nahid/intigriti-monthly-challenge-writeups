@@ -131,7 +131,7 @@ This told me the backend was running **MySQL version 8.0.46**.
 
 ---
 
-## 🖼️ Step 5 — Find the Name of the Database
+## Step 5 — Find the Name of the Database
 
 Next, I wanted to know the **name** of the database — like finding out the name of the room the locked drawer is in.
 
