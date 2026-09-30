@@ -161,7 +161,7 @@ So the database was called `critter_gallery`.
 
 ---
 
-## 🖼️ Step 6 — List All the Tables Inside the Database
+## Step 6 — List All the Tables Inside the Database
 
 Now I wanted to see all the "drawers" (tables) inside that room (database).
 
@@ -186,9 +186,10 @@ Response:
 animals,secret_vault
 ```
 
-Two tables existed: `animals` (probably just normal pictures) and `secret_vault` — which sounded very interesting. 👀
+Two tables existed: `animals` (probably just normal pictures) and `secret_vault` — which sounded very interesting.
 
-**📸 [Encoded payload for table enumeration and response showing `animals,secret_vault`]**
+**Encoded payload for table enumeration and response showing `animals,secret_vault`**
+
 ![Encoded payload for table enumeration](image_file/9.jpg)
 
 ---
